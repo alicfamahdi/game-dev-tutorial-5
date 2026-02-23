@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://cvji6styqf236" path="res://scenes/character_body_2d.gd" id="2_0bbpv"]
+[ext_resource type="Texture2D" uid="uid://7vg2j1865jam" path="res://assets/kenney_platformercharacters/PNG/Female/Poses/female_idle.png" id="3_rarhs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
+size = Vector2(80, 110)
 
 [node name="Root" type="Node2D" unique_id=918599496]
 
@@ -12,3 +17,13 @@ position = Vector2(856, 324)
 
 [node name="Ground3" parent="." unique_id=1648397147 instance=ExtResource("1_elqb8")]
 position = Vector2(576, 394)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1094821441]
+position = Vector2(160, 234)
+script = ExtResource("2_0bbpv")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=184730429]
+texture = ExtResource("3_rarhs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=96589617]
+shape = SubResource("RectangleShape2D_vcsgt")
