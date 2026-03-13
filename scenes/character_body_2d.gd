@@ -40,7 +40,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			animated_sprite.play("stand")
 
-	if is_walking:
+	if is_walking and !punch_sfx.playing:
 		walk_sfx.play()
 	else:
 		walk_sfx.stop()

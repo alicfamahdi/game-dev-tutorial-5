@@ -15,6 +15,8 @@ Dengan menekan spacebar, pemain bisa melakukan punch. Aksi ini nantinya dapat be
 "Implementasikan audio feedback dari interaksi antara objek baru dengan objek pemain. Misalnya, muncul efek suara ketika pemain tabrakan dengan objek baru."
 Audio feedback berupa SFX ketika lava snake sudah kena hit.
 
+"Implementasi sistem audio yang relatif terhadap posisi objek. Misalnya, musik latar akan semakin terdengar samar ketika pemain semakin jauh dari posisi awal level."
+Volume background relatif terhadap seberapa dekat player ke lava snake. Semakin mendekati, musik akan semakin terdengar.
 
 Referensi:
 
