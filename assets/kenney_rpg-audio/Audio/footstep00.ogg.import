@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/footstep00.ogg-185e27be93eaece8be0c5dd0ab2f76
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

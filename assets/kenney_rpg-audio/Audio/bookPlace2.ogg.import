@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/bookPlace2.ogg-5140990f4cc1f1d2ec29bf2a8270fb
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
