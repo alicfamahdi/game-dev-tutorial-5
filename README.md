@@ -1,31 +1,22 @@
-> Silakan pilih fitur lanjutan yang ingin dikerjakan. Kemudian jelaskan proses pengerjaannya di dalam sebuah dokumen teks README.md. Cantumkan juga referensi-referensi yang digunakan sebagai acuan ketika menjelaskan proses implementasi.
+> Silakan berkreasi lebih lanjut untuk membuat Tutorial 3 dan 5 kamu lebih menarik dari sebelumnya! Jangan lupa untuk menjelaskan proses pengerjaan tutorial ini di dalam berkas README.md yang sama dengan Tutorial 3. Silakan tambahkan subbab (section) baru yang berisi penjelasan proses pengerjaan Tutorial 5. Cantumkan juga referensi-referensi yang digunakan sebagai acuan ketika menjelaskan proses implementasi.
 
-Fitur lanjutan yang saya implementasikan adalah:
-- Double jump - karakter pemain bisa melakukan aksi loncat sebanyak dua kali.
-- Crouching - karakter pemain dapat jongkok dimana sprite-nya terlihat lebih kecil (misal: sprite karakter manusianya terlihat berjongkok) dan kecepatan pergerakannya menjadi lebih lambat ketika lagi jongkok
+"Membuat minimal 1 (satu) objek baru di dalam2 permainan yang dilengkapi dengan animasi menggunakan spritesheet selain yang disediakan tutorial. Silakan cari spritesheet animasi di beberapa koleksi aset gratis seperti Kenney."
+Objek baru yang dibuat adalah lava snake yang merupakan musuh utama. Terdapat animasi untuk saat default, hit, dan dead.
 
-Untuk Double Jump, saya memodifikasi kode bagian
-```
-if is_on_floor() and Input.is_action_just_pressed('ui_up'):
-    velocity.y = jump_speed
-```
-Awalnya, kode hanya mengakomodasi untuk jump sekali. 
-Saya mencoba untuk menghapus bagian pengecekan kondisi `is_on_floor()` agar player bisa melakukan infinite number of jumps tanpa harus menempel pada floor terlebih dahulu (saat itu saya berpikir, fiturnya seperti ini saja kali ya). Setelah itu, saya membuat `jump_count` yang menghitung player sudah jump berapa kali. Jika jump_count == 2, player tidak bisa jump lagi. Saya juga mengatur agar setiap kali player kembali menempel ke floor, `jump_count` akan reset ke 0.
+"Membuat minimal 1 (satu) audio untuk efek suara (SFX) dan memasukkannya ke dalam permainan. Kamu dapat membuatnya sendiri atau mencari dari koleksi aset gratis."
+Terdapat beberapa SFX yang digunakan dalam game, yaitu footsteps, attack, dan enemy feedback.
 
-Untuk Crouching, saya memodifikasi potongan kode
-```
-if Input.is_action_pressed("ui_left"):
-    velocity.x = -walk_speed
-elif Input.is_action_pressed("ui_right"):
-    velocity.x =  walk_speed
-else:
-    velocity.x = 0
-```
+"Membuat minimal 1 (satu) musik latar (background music) dan memasukkannya ke dalam permainan. Kamu dapat membuatnya sendiri atau mencari dari koleksi aset gratis."
+Terdapat musik latar dari Antonio Vivaldi, Summer Movement 3. Aset sudah royalty free.
 
-Pertama, saya membuat suatu kondisi. Ketika press `ui_down`, kecepatan berjalan player akan melambat menjadi setengah dari kecepatan biasanya (1/2 * 200). Conditional ini digunakan untuk kedua pergerakan `ui_left` dan `ui_right`. Jika `ui_down` tidak ditekan, kecepatan player akan kembali seperti semula (200).
+"Implementasikan interaksi antara objek baru tersebut dengan objek yang dikendalikan pemain. Misalnya, pemain dapat menciptakan atau menghilangkan objek baru tersebut ketika menekan suatu tombol atau tabrakan dengan objek lain di dunia permainan."
+Dengan menekan spacebar, pemain bisa melakukan punch. Aksi ini nantinya dapat berefek ke lava snake, mengubah sprite menjadi menunjukkan animasi "hit" lalu "dead".
 
-Selain 2 fitur tambahan tersebut, saya juga menyesuaikan `Sprite2D` agar sesuai dengan pergerakan yang dilakukan. Misalnya, ketika diam spritenya berdiri saja, ketika berjalan menampilkan sprite walk, ketika crouch spritenya duck, dan ketika jump spritenya jump. Tampilan sprite juga akan berubah sesuai arah inputnya.
+"Implementasikan audio feedback dari interaksi antara objek baru dengan objek pemain. Misalnya, muncul efek suara ketika pemain tabrakan dengan objek baru."
+Audio feedback berupa SFX ketika lava snake sudah kena hit.
 
-Referensi
-Godot Knowledge Hub. (n.d.). How to use Sprite2D in Godot Tutorial [Video]. YouTube. https://www.youtube.com/watch?v=wPyqwL0vIvA
-GameStick. (2025, January 28). How to Flip Player Sprites Easily in Godot 4.3 . Godot tutorial. [Video]. YouTube. https://www.youtube.com/watch?v=QNJOAwpJokA
+
+Referensi:
+
+GameStick. (2024, November 11). how to add 3d walking sound in godot 4 .godot tutorial. [Video]. YouTube. https://www.youtube.com/watch?v=fE-Z8ZlVvzU
+GDQuest. (2022, August 18). How to code melee attacks in Godot: hitboxes and hurtboxes [Video]. YouTube. https://www.youtube.com/watch?v=JWjzSn95bM0
