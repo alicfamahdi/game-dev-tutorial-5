@@ -22,7 +22,10 @@ func _process(_delta: float) -> void:
 func _start_defeat_sequence() -> void:
 	_is_defeated = true
 	_animated_sprite.play("hit")
+	$HitSFX.play()
 	await get_tree().create_timer(hit_duration).timeout
+	if $HitSFX.playing:
+			$HitSFX.stop()
 	_animated_sprite.play("dead")
 
 func _on_body_entered(body: Node) -> void:

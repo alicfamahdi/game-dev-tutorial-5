@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/handleCoins2.ogg-d3a09494b85a04e396ceb63a6b3a
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
